@@ -1,4 +1,4 @@
-import 'package:numbers/numbers.dart';
+import 'package:ancient_number_converter/ancient_number_converter.dart';
 
 /// Converts Roman numbers. Accepted range is 1-3999.
 class RomanNumberConverter extends AncientNumberConverter {

@@ -1,4 +1,4 @@
-The numbers library allows you to format and parse ancient numbers.
+The ancient_number_converter library allows you to format and parse ancient numbers.
 
 ## Features
 

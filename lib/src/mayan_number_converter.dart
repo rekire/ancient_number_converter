@@ -1,4 +1,4 @@
-import 'package:numbers/numbers.dart';
+import 'package:ancient_number_converter/ancient_number_converter.dart';
 
 /// Formats Mayan numbers. Accepts all positive numbers.
 class MayanNumberConverter extends AncientNumberConverter {

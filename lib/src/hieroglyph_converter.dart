@@ -1,4 +1,4 @@
-import 'package:numbers/numbers.dart';
+import 'package:ancient_number_converter/ancient_number_converter.dart';
 
 /// The hieroglyph converter. Some important notes:
 /// - For the value 0 will be returned "𓄤" F035. See https://en.wikipedia.org/wiki/Egyptian_numerals#Zero
