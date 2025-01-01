@@ -1,4 +1,4 @@
-/// A library to format ancient numbers, like Roman, Mayan or egyptian hieroglyphs.
+/// The numbers library allows you to format and parse ancient numbers.
 library;
 
 export 'src/ancient_number_formatter.dart';
