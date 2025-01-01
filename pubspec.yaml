@@ -1,0 +1,11 @@
+name: numbers
+description: This library allows you to format and parse ancient numbers.
+version: 0.0.1
+repository: https://github.com/rekire/numbers
+
+environment:
+  sdk: ^3.6.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.24.0
