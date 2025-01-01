@@ -1,10 +1,11 @@
 import 'package:ancient_number_converter/ancient_number_converter.dart';
 
-/// The hieroglyph converter. Some important notes:
+/// The hieroglyph converter. Accepted range is 0-9999999.
+///
+/// Some important notes:
 /// - For the value 0 will be returned "𓄤" F035. See https://en.wikipedia.org/wiki/Egyptian_numerals#Zero
 /// - There is the assumption that the numbers 1-9 are no dates otherwise the result would be wrong
 /// - The parser accepts also the dates hieroglyphes
-/// Accepted range is 0-9999999.
 class HieroglyphConverter extends AncientNumberConverter {
   // source: https://en.wikipedia.org/wiki/List_of_Egyptian_hieroglyphs
   static const Map<int, String> _hieroglyphValues = {
