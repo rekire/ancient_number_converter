@@ -1,10 +1,14 @@
 name: ancient_number_converter
 description: The ancient_number_converter library allows you to format and parse ancient numbers.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/rekire/ancient_number_converter
 
 environment:
   sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
   lints: ^5.0.0

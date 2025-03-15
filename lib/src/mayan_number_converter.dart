@@ -1,4 +1,5 @@
 import 'package:ancient_number_converter/ancient_number_converter.dart';
+import 'package:flutter/services.dart';
 
 /// Formats Mayan numbers. Accepts all positive numbers.
 class MayanNumberConverter extends AncientNumberConverter {
@@ -49,6 +50,9 @@ class MayanNumberConverter extends AncientNumberConverter {
     '\u{1D2E0}': 0,
   };
 
+  static final TextInputFormatter _inputFormatter =
+      FilteringTextInputFormatter.allow(RegExp('(${_integerValues.keys.join('|')})'));
+
   @override
   String? format(num number) {
     String result = '';
@@ -80,11 +84,7 @@ class MayanNumberConverter extends AncientNumberConverter {
   double? tryParse(String number) {
     double result = 0;
 
-    final digits = number
-        .replaceAll('\n', '')
-        .runes
-        .map((rune) => String.fromCharCode(rune))
-        .toList();
+    final digits = number.replaceAll('\n', '').runes.map((rune) => String.fromCharCode(rune)).toList();
 
     for (int i = 0; i < digits.length; i++) {
       final digit = _integerValues[digits[i]];
@@ -100,4 +100,7 @@ class MayanNumberConverter extends AncientNumberConverter {
 
     return result;
   }
+
+  @override
+  TextInputFormatter get inputFormatter => _inputFormatter;
 }

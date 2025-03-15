@@ -1,4 +1,5 @@
 import 'package:ancient_number_converter/ancient_number_converter.dart';
+import 'package:flutter/services.dart';
 
 /// The hieroglyph converter. Accepted range is 0-9999999.
 ///
@@ -121,6 +122,9 @@ class HieroglyphConverter extends AncientNumberConverter {
     '\u{13124}': 0,
   };
 
+  static final TextInputFormatter _inputFormatter =
+      FilteringTextInputFormatter.allow(RegExp('(${_integerValues.keys.join('|')})'));
+
   @override
   String? format(num number) {
     var value = number.toInt();
@@ -146,11 +150,7 @@ class HieroglyphConverter extends AncientNumberConverter {
   double? tryParse(String number) {
     int result = 0;
 
-    final chars = number
-        .replaceAll('\n', '')
-        .runes
-        .map((rune) => String.fromCharCode(rune))
-        .toList();
+    final chars = number.replaceAll('\n', '').runes.map((rune) => String.fromCharCode(rune)).toList();
 
     for (int i = chars.length - 1; i >= 0; i--) {
       final currentValue = _integerValues[chars[i]];
@@ -163,4 +163,7 @@ class HieroglyphConverter extends AncientNumberConverter {
 
     return result.toDouble();
   }
+
+  @override
+  TextInputFormatter get inputFormatter => _inputFormatter;
 }

@@ -1,4 +1,5 @@
 import 'package:ancient_number_converter/ancient_number_converter.dart';
+import 'package:flutter/services.dart';
 
 /// Converts Roman numbers. Accepted range is 1-3999.
 class RomanNumberConverter extends AncientNumberConverter {
@@ -27,6 +28,9 @@ class RomanNumberConverter extends AncientNumberConverter {
     'D': 500,
     'M': 1000,
   };
+
+  static final TextInputFormatter _inputFormatter =
+      FilteringTextInputFormatter.allow(RegExp('([${_romanValues.keys.join('')}])'));
 
   @override
   String? format(num number) {
@@ -70,4 +74,7 @@ class RomanNumberConverter extends AncientNumberConverter {
 
     return result;
   }
+
+  @override
+  TextInputFormatter get inputFormatter => _inputFormatter;
 }
